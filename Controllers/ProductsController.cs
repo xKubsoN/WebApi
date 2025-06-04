@@ -6,6 +6,7 @@ using WebApi.Models;
 [ApiController]
 [Route("api/[controller]")]
 
+
 public class ProductsController : ControllerBase {
     private readonly ApplicationDbContext _context;
 
