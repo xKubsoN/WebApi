@@ -31,13 +31,13 @@ public class ProductsController : ControllerBase {
     {
         _context.Products.Add(product);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        return CreatedAtAction(nameof(GetProduct), new { id = product.productID }, product);
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateProduct(int id, Product product)
     {
-        if (id != product.Id) return BadRequest();
+        if (id != product.productID) return BadRequest();
         _context.Entry(product).State = EntityState.Modified;
         await _context.SaveChangesAsync();
         return NoContent();

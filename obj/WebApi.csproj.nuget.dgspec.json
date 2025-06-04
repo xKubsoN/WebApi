@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\demoWebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\demoWebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\demoWebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\demoWebApi\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\kszcz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\kszcz\\OneDrive\\Desktop\\Portfolio\\demoWebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,7 +59,7 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

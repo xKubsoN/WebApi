@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi.Data;
 
@@ -15,82 +16,50 @@ namespace WebApi.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.5");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("WebApi.Models.Order", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("orderID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("TEXT");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("orderID"));
 
-                    b.HasKey("Id");
+                    b.Property<DateTime>("orderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("productIDs")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("orderID");
 
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("WebApi.Models.OrderProduct", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("OrderId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderProducts");
-                });
-
             modelBuilder.Entity("WebApi.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("productID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("productID"));
+
+                    b.Property<string>("name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
+                    b.Property<decimal>("price")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("productID");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("WebApi.Models.OrderProduct", b =>
-                {
-                    b.HasOne("WebApi.Models.Order", "Order")
-                        .WithMany("OrderProducts")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.Product", "Product")
-                        .WithMany("OrderProducts")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Order", b =>
-                {
-                    b.Navigation("OrderProducts");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Product", b =>
-                {
-                    b.Navigation("OrderProducts");
                 });
 #pragma warning restore 612, 618
         }

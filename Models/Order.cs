@@ -2,9 +2,9 @@ namespace WebApi.Models
 {
     public class Order
     {
-        public int Id { get; set; }
-        public DateTime OrderDate { get; set; }
+        public int orderID { get; set; }
+        public DateTime orderDate { get; set; }
 
-        public ICollection<OrderProduct> OrderProducts { get; set; }
+        public List<int> productIDs { get; set; } = new();
     }
 }
