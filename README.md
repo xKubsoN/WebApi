@@ -50,19 +50,20 @@ https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net
 
 Dostep do API
 ORDERS
+```
 GET https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/orders
 POST https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/orders
 GET https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/orders/{id}
 DELETE https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/orders/{id}
+```
 
 PRODUCTS
+```
 GET https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/products
 POST https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/products
 GET https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/products/{id}
 PUT https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/products/{id}
 DELETE https://webapidev-b2g5ana7hvfme5fk.westeurope-01.azurewebsites.net/api/products/{id}
+```
 
-Wykorzystane uslugi Azure
-App Service
-SQL Server
-SQL Database
+Wykorzystane uslugi Azure: App Service, SQL Server, SQL Database
